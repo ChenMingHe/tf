@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-4-7 9:31:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="edu.uestc.tc.beans.CrowdnessArea">
+  <id column="areaId" name="id" type="integer">
+   <generator class="increment"/>
+  </id>
+  <property column="Date" generated="never" lazy="false" name="currentDate"/>
+  <property column="Latitude" generated="never" lazy="false" name="normallizedLat"/>
+  <property column="Longtitude" generated="never" lazy="false" name="normallizedLong"/>
+  <property column="Crowdness" generated="never" lazy="false" name="areaCrowdness"/>
+  <property generated="never" lazy="false" name="isHotPot"/>
+ </class>
+</hibernate-mapping>

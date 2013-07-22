@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-4-7 9:31:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="edu.uestc.tc.beans.VehicleInfo" table="VEHICLEINFO">
+  <id name="iNo" type="int">
+   <column name="I_NO"/>
+  </id>
+  <property generated="never" lazy="false" name="Dtime" type="timestamp">
+   <column name="DTIME"/>
+  </property>
+  <property generated="never" lazy="false" name="iLong" type="int">
+   <column name="ILONG"/>
+  </property>
+  <property generated="never" lazy="false" name="iLat" type="int">
+   <column name="ILAT"/>
+  </property>
+  <property generated="never" lazy="false" name="iSpeed" type="int">
+   <column name="ISPEED"/>
+  </property>
+ </class>
+</hibernate-mapping>

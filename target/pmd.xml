@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="5.0.2" timestamp="2013-07-19T10:58:29.285">
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\beans\CrowdnessGrid.java">
+<violation beginline="5" endline="5" begincolumn="1" endcolumn="35" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.beans" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'javax.persistence.ManyToOne'
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\beans\Grid.java">
+<violation beginline="4" endline="4" begincolumn="8" endcolumn="20" rule="UnusedModifier" ruleset="Unused Code" package="edu.uestc.tc.beans" class="Grid" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\VehicleInfoHandleEntry.java">
+<violation beginline="22" endline="22" begincolumn="25" endcolumn="45" rule="UselessParentheses" ruleset="Unnecessary" package="edu.uestc.tc.core" class="VehicleInfoHandleEntry" method="run" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\barrier\Barrier.java">
+<violation beginline="27" endline="27" begincolumn="25" endcolumn="45" rule="UselessParentheses" ruleset="Unnecessary" package="edu.uestc.tc.core.barrier" class="Barrier" method="handle" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\barrier\GridAssembler.java">
+<violation beginline="6" endline="6" begincolumn="8" endcolumn="44" rule="DuplicateImports" ruleset="Import Statements" package="edu.uestc.tc.core.barrier" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#DuplicateImports" priority="4">
+Avoid duplicate imports such as 'edu.uestc.tc.beans.gridimpl.ArrayGrid'
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\cpu\CpuHandler.java">
+<violation beginline="11" endline="11" begincolumn="16" endcolumn="64" rule="UnusedModifier" ruleset="Unused Code" package="edu.uestc.tc.core.cpu" class="CpuHandler" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\cpu\cpuimpl\AreaInfoHandle.java">
+<violation beginline="10" endline="10" begincolumn="1" endcolumn="37" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.cpu.cpuimpl" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'edu.uestc.tc.core.dao.Convert'
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\cpu\cpuimpl\CopyOfAreaInfoHandle.java">
+<violation beginline="10" endline="10" begincolumn="1" endcolumn="37" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.cpu.cpuimpl" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'edu.uestc.tc.core.dao.Convert'
+</violation>
+<violation beginline="19" endline="19" begincolumn="31" endcolumn="38" rule="UnusedPrivateField" ruleset="Unused Code" package="edu.uestc.tc.core.cpu.cpuimpl" class="CopyOfAreaInfoHandle" variable="temgGrid" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'temgGrid'.
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\dao\Convert.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="26" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.Iterator'
+</violation>
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="31" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.hibernate.Hibernate'
+</violation>
+<violation beginline="10" endline="10" begincolumn="1" endcolumn="33" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.hibernate.Transaction'
+</violation>
+<violation beginline="11" endline="11" begincolumn="1" endcolumn="39" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.hibernate.annotations.Where'
+</violation>
+<violation beginline="13" endline="13" begincolumn="1" endcolumn="40" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'edu.uestc.tc.beans.CrowdnessGrid'
+</violation>
+<violation beginline="38" endline="38" begincolumn="25" endcolumn="47" rule="UselessParentheses" ruleset="Unnecessary" package="edu.uestc.tc.core.dao" class="Convert" method="run" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unnecessary.html#UselessParentheses" priority="4">
+Useless parentheses.
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\dao\Storage.java">
+<violation beginline="6" endline="6" begincolumn="1" endcolumn="39" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.hibernate.cfg.Configuration'
+</violation>
+<violation beginline="7" endline="7" begincolumn="1" endcolumn="52" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'org.hibernate.service.ServiceRegistryBuilder'
+</violation>
+<violation beginline="9" endline="9" begincolumn="1" endcolumn="40" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.dao" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'edu.uestc.tc.beans.CrowdnessArea'
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\core\filter\Filter.java">
+<violation beginline="3" endline="3" begincolumn="1" endcolumn="27" rule="UnusedImports" ruleset="Import Statements" package="edu.uestc.tc.core.filter" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'java.util.ArrayList'
+</violation>
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="44" rule="ImportFromSamePackage" ruleset="Import Statements" package="edu.uestc.tc.core.filter" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/imports.html#ImportFromSamePackage" priority="3">
+No need to import a type that lives in the same package
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\utils\CrowdnessGridQueue.java">
+<violation beginline="6" endline="6" begincolumn="16" endcolumn="73" rule="UnusedModifier" ruleset="Unused Code" package="edu.uestc.tc.utils" class="CrowdnessGridQueue" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+<violation beginline="8" endline="8" begincolumn="16" endcolumn="65" rule="UnusedModifier" ruleset="Unused Code" package="edu.uestc.tc.utils" class="CrowdnessGridQueue" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+</file>
+<file name="E:\java\webtraffic\src\main\java\edu\uestc\tc\utils\GridQueue.java">
+<violation beginline="6" endline="6" begincolumn="16" endcolumn="71" rule="UnusedModifier" ruleset="Unused Code" package="edu.uestc.tc.utils" class="GridQueue" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+<violation beginline="8" endline="8" begincolumn="16" endcolumn="63" rule="UnusedModifier" ruleset="Unused Code" package="edu.uestc.tc.utils" class="GridQueue" externalInfoUrl="http://pmd.sourceforge.net/pmd-5.0.2/rules/java/unusedcode.html#UnusedModifier" priority="3">
+Avoid modifiers which are implied by the context
+</violation>
+</file>
+</pmd>

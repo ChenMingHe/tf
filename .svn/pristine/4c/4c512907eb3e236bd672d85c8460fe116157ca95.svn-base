@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<bean id="linkedBlockingQueue"
+		class="java.util.concurrent.LinkedBlockingQueue"
+		scope="singleton">
+	</bean>
+	<bean id="crowdnesslinkedBlockingQueue"
+		class="java.util.concurrent.LinkedBlockingQueue"
+		scope="singleton">
+	</bean>
+	<bean id="crowdnessInfoBuff"
+		class="edu.uestc.tc.utils.CrowdnessLinkedBlockingQueue">
+		<property name="crowdnessInfoQueue" ref="crowdnesslinkedBlockingQueue"></property>
+	</bean>
+	<bean id="vehicleInfoBuff"
+		class="edu.uestc.tc.utils.VehicleInfoLinkedBlockingQueue">
+		<property name="vehicleInfoQueue" ref="linkedBlockingQueue"></property>
+	</bean>
+	
+	<bean id="filter" class="edu.uestc.tc.core.filter.Filter">
+		<property ref="barrier" name="successor"></property>
+		<property name="ruleList" >
+		   <list>
+		     <ref local="areaValidityFiltering"/>
+		   </list>
+		</property>
+	</bean>
+	
+	<bean id="barrier" class="edu.uestc.tc.core.barrier.Barrier">
+		<property name="hourGlass" ref="dataBaseHourglass"></property>
+		<property name="strategyArray" >
+			<list>
+		     	<ref local="strategyDiscard"/>
+		     	<ref local="strategyGrid1"/>
+		     	<ref local="strategyGrid2"/>
+		     	<ref local="strategyGridSlide"/>
+		   	</list>
+		</property>
+	</bean>
+	<bean id="vehicleInfoHandleEntry"
+		class="edu.uestc.tc.core.VehicleInfoHandleEntry">
+		<property name="filterHandler" ref="filter"></property>
+		<property name="vehicleInfobuff" ref="vehicleInfoBuff"></property>
+	</bean>
+	<bean id="areaInfoHandleEntry"
+		class="edu.uestc.tc.core.AreaInfoHandleEntry">
+		<property name="cpuHandler" ref="areaInfoHandle"></property>
+	</bean>
+	<bean id="copyOfAreaInfoHandle"
+		class="edu.uestc.tc.core.cpu.cpuimpl.CopyOfAreaInfoHandle">
+		<property name="crowdnessGridQueue" ref="crowdnessInfoBuff"></property>
+		<property name="paramA" value="0.5"></property>
+		<property name="hotPotBond" value="0.6"></property>
+	</bean>
+	<bean id="areaInfoHandle"
+		class="edu.uestc.tc.core.cpu.cpuimpl.AreaInfoHandle">
+		<property name="crowdnessGridQueue" ref="crowdnessInfoBuff"></property>
+		<property name="paramA" value="0.5"></property>
+		<property name="hotPotBond" value="0.6"></property>
+	</bean>
+
+	<bean id="storage" class="edu.uestc.tc.core.dao.Storage">
+		<property name="crowdnessGridQueue" ref="crowdnessInfoBuff"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="convert" class="edu.uestc.tc.core.dao.Convert">
+		<property name="vehicleInfoBuff" ref="vehicleInfoBuff"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<bean id="areaValidityFiltering"
+		class="edu.uestc.tc.core.filter.ruleimpl.AreaValidityFiltering">
+		<property name="highestLat" value="24000000"></property>
+		<property name="highestLong" value="120000000"></property>
+		<property name="lowestLat" value="21000000"></property>
+		<property name="lowestLong" value="100000000"></property>
+	</bean>
+	<bean id="dataBaseHourglass"
+		class="edu.uestc.tc.core.barrier.hourglassimpl.DataBaseHourglass">	
+	<property name="timeRange" value="5"></property>
+	</bean>	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:hibernate.cfg.xml"/>
+      </bean>
+     
+      <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/> 	
+		<property name="url" value="jdbc:mysql://localhost/Traffic"/>
+		<!--<property name="username" value="root"/>
+		<property name="password" value="1234"/>  -->
+		
+	</bean>   
+	
+      <bean id="strategyDiscard"
+      	class="edu.uestc.tc.core.barrier.strategyimpl.StrategyDiscard">
+      </bean>
+      <bean id="strategyGrid1"
+      	class="edu.uestc.tc.core.barrier.strategyimpl.StrategyGrid1">
+      </bean>
+      <bean id="strategyGrid2"
+      	class="edu.uestc.tc.core.barrier.strategyimpl.StrategyGrid2">
+      </bean>
+      <bean id="strategyGridSlide"
+      	class="edu.uestc.tc.core.barrier.strategyimpl.StrategyGridSlide">
+      </bean>
+      
+      <bean id="excute" class="springmvc.excute.Excute"></bean>
+</beans>
+
+
+
+

@@ -1,0 +1,84 @@
+package start;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import edu.uestc.tc.core.AreaInfoHandleEntry;
+import edu.uestc.tc.core.VehicleInfoHandleEntry;
+import edu.uestc.tc.core.barrier.Barrier;
+import edu.uestc.tc.core.cpu.cpuimpl.CopyOfAreaInfoHandle;
+import edu.uestc.tc.core.dao.Convert;
+import edu.uestc.tc.core.dao.Storage;
+
+/**
+ * Servlet implementation class Go
+ */
+@WebServlet("/Go")
+public class Go extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	ApplicationContext ctx = null;
+	Convert convert = null;
+	VehicleInfoHandleEntry entry = null;
+	Barrier barrier = null;
+	AreaInfoHandleEntry entry1 = null;
+	Storage storage = null;
+	CopyOfAreaInfoHandle copy = null;
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public Go() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("post");
+		ctx = new ClassPathXmlApplicationContext(
+				"edu/uestc/tc/core/coreBean.xml");
+		convert = (Convert) ctx.getBean("convert");
+		entry = (VehicleInfoHandleEntry) ctx.getBean("vehicleInfoHandleEntry");
+		entry1 = (AreaInfoHandleEntry) ctx.getBean("areaInfoHandleEntry");
+		storage = (Storage) ctx.getBean("storage");
+		Thread threadconvert = new Thread(convert);
+		Thread threadEntry = new Thread(entry);
+		Thread threadEntry1 = new Thread(entry1);
+		Thread threadstorage = new Thread(storage);
+		threadconvert.start();
+		threadEntry.start();
+		threadEntry1.start();
+		threadstorage.start();
+
+		try {
+			threadconvert.join();
+			threadEntry.join();
+			threadEntry1.join();
+			threadstorage.join();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+}
